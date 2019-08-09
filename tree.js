@@ -102,12 +102,12 @@ function update(source) {
       .remove();
 */
   // Update the links…
-  var link = vis.selectAll("path.link")
+  var link_tree = vis.selectAll("path.link_tree")
       .data(tree.links(nodes), function(d) { return d.target.id; });
 
   // Enter any new links at the parent's previous position.
-  link.enter().insert("svg:path", "g")
-      .attr("class", "link")
+  link_tree.enter().insert("svg:path", "g")
+      .attr("class", "link_tree")
       .attr("d", function(d) {
         var o = {x: source.x0, y: source.y0};
         return diagonal({source: o, target: o});
@@ -117,12 +117,12 @@ function update(source) {
       .attr("d", diagonal);
 
   // Transition links to their new position.
-  link.transition()
+  link_tree.transition()
       .duration(duration)
       .attr("d", diagonal);
 
   // Transition exiting nodes to the parent's new position.
-  link.exit().transition()
+  link_tree.exit().transition()
       .duration(duration)
       .attr("d", function(d) {
         var o = {x: source.x, y: source.y};

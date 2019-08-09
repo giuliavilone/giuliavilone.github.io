@@ -37,7 +37,16 @@ ul.posts {
     margin: 20px auto 40px; 
     font-size: 1.5em;
 }
+.node {
+  font: 10px sans-serif;
+}
 
+.link {
+  stroke: steelblue;
+  stroke-opacity: 0.5;
+  fill: none;
+  pointer-events: none;
+}
 ul.posts li {
     list-style: none;
 }

@@ -2,7 +2,7 @@ var width = 960,
     height = 500,
     radius = 6;
 
-var fill = d3..scaleOrdinal(d3.schemeCategory20);
+var fill = d3.scaleOrdinal(d3.schemeCategory20);
 
 var force = d3.layout.force()
     .gravity(.05)

@@ -7,8 +7,12 @@ var w = 960,
 var tree = d3.tree()
     .size([h, w - 160]);
 
-var diagonal = d3.svg.diagonal()
-    .projection(function(d) { return [d.y, d.x]; });
+var diagonal = function link(d) {
+  return "M" + d.source.y + "," + d.source.x
+      + "C" + (d.source.y + d.target.y) / 2 + "," + d.source.x
+      + " " + (d.source.y + d.target.y) / 2 + "," + d.target.x
+      + " " + d.target.y + "," + d.target.x;
+};
 
 var vis = d3.select("#chart").append("svg:svg")
     .attr("width", w)

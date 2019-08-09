@@ -53,20 +53,12 @@ ul.posts li {
   pointer-events: none;
 }
 
-
-circle {
-  cursor: pointer;
+.node circle {
   fill: #fff;
   stroke: steelblue;
-  stroke-width: 1.5px;
+  stroke-width: 3px;
+}
+.node text {
+  font: 12px sans-serif;
 }
 
-text {
-	font-size:10px;
-}
-
-path.link_tree {
-  fill: none;
-  stroke: #ccc;
-  stroke-width: 1.5px;
-}

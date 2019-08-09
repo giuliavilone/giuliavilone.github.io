@@ -20,7 +20,7 @@ var vis = d3.select("#chart").append("svg:svg")
   .append("svg:g")
     .attr("transform", "translate(40,0)");
 
-d3.json("https://github.com/giuliavilone/literature_review/blob/master/paper.json", function(json) {
+d3.json("https://raw.githubusercontent.com/giuliavilone/literature_review/master/paper.json", function(json) {
   json.x0 = 800;
   json.y0 = 0;
   update(root = json);

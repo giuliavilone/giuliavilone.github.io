@@ -4,7 +4,7 @@ var w = 960,
     duration = 500,
     root;
 
-var tree = d3.layout.tree()
+var tree = d3.tree()
     .size([h, w - 160]);
 
 var diagonal = d3.svg.diagonal()

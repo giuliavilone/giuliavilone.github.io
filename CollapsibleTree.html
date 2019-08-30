@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,6 +38,9 @@
 	}
 	.node text {
 	  font: 12px sans-serif;
+	}
+	.node, .clickable {
+	  cursor: pointer;
 	}
 	.link {
 	  fill: none;
@@ -146,6 +149,7 @@
 					  links = treeData.descendants().slice(1);
 				  // Normalize for fixed-depth.
 				  nodes.forEach(function(d){ d.y = d.depth * 180});
+				  
 				  // ****************** Nodes section ***************************
 				  // Update the nodes...
 				  var node = svg.selectAll('g.node')
@@ -173,7 +177,18 @@
 					  .attr("text-anchor", function(d) {
 						  return d.children || d._children ? "end" : "start";
 					  })
-					  .text(function(d) { return d.data.name; });
+					  .text(function(d) { return d.data.name; })
+;
+    
+				nodeEnter.each(function(d){
+					var thisNode = d3.select(this);
+					if (!d.children) {
+						thisNode.append("a")
+							.attr("xlink:href", function(d) { return d.data.url; })
+							.attr("class", "clickable")
+							.on("click", click);
+					}
+				});
 				  // UPDATE
 				  var nodeUpdate = nodeEnter.merge(node);
 				  // Transition to the proper position for the node
@@ -202,6 +217,7 @@
 				  // On exit reduce the opacity of text labels
 				  nodeExit.select('text')
 					.style('fill-opacity', 1e-6);
+					
 				  // ****************** links section ***************************
 				  // Update the links...
 				  var link = svg.selectAll('path.link')
@@ -245,9 +261,11 @@
 					if (d.children) {
 						d._children = d.children;
 						d.children = null;
-					  } else {
+					  } else if (d._children) {
 						d.children = d._children;
 						d._children = null;
+					  } else{
+						window.open(d.data.url, "_blank")
 					  }
 					update(d);
 				  }

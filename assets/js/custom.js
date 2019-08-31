@@ -61,28 +61,28 @@
 
 		$('.mu-skill-progress-bar').appear(function() {
 
-		 	$('.mu-html5-bar').LineProgressbar({
-				percentage: 95,
-				triggerOnce: true
-			});
-
-			$('.mu-css-bar').LineProgressbar({
+		 	$('.mu-python-bar').LineProgressbar({
 				percentage: 90,
 				triggerOnce: true
 			});
 
-			$('.mu-photoshop-bar').LineProgressbar({
+			$('.mu-r-bar').LineProgressbar({
 				percentage: 85,
 				triggerOnce: true
 			});
 
-			$('.mu-wordpress-bar').LineProgressbar({
+			$('.mu-mysql-bar').LineProgressbar({
 				percentage: 80,
 				triggerOnce: true
 			});
 
-			$('.mu-jquery-bar').LineProgressbar({
-				percentage: 55,
+			$('.mu-latex-bar').LineProgressbar({
+				percentage: 75,
+				triggerOnce: true
+			});
+
+			$('.mu-d3js-bar').LineProgressbar({
+				percentage: 35,
 				triggerOnce: true
 			});
 

@@ -93,8 +93,8 @@
 		
 	<main role="main">
 		<script>
-			let width = 1330,
-				height = 1270,
+			let width = 1400,
+				height = 1330,
 				radius = (Math.min(width, height) / 2) - 10,
 				node
 			  
@@ -108,7 +108,7 @@
 			const x = d3.scaleLinear().range([0, 2 * Math.PI])
 			const y = d3.scaleLinear().range([0, radius])
 
-			const colors = d3.scaleOrdinal(d3.schemeCategory20)
+			const colors = d3.scaleOrdinal(d3.schemeCategory20c)
 			const partition = d3.partition()
 
 			const arc = d3.arc()
@@ -138,7 +138,7 @@
 					 .attr('id', function (d) { return d.data.name })
 					 .attr('fill', '#000')
 					 .style("font-size", "11px")
-					 .call(wrap, 60)
+					 .call(wrap, 70)
 
 			  svg.selectAll('path')
 				 .transition('update')
@@ -157,7 +157,7 @@
 				   return d.textAngle > 180 ? 27: 27
 				 })
 				 .attr('opacity', function (e) { 
-				  return e.x1 - e.x0 > 0.005 ? 1 : 0 
+				  return e.x1 - e.x0 > 0.001 ? 1 : 0 
 				 })
 
 			})
@@ -238,7 +238,7 @@
 				   if (e.x0 >= d.x0 && e.x1 <= (d.x1 + 0.0000000000000001)) {
 					 const arcText = d3.select(this.parentNode).select('text')
 					 arcText.attr('visibility', function(d) {
-					   return (d.x1 - d.x0) / total < 0.01 ? 'hidden' : 'visible' 
+					   return (d.x1 - d.x0) / total < 0.001 ? 'hidden' : 'visible' 
 					 })
 				   } else {
 					 return 0

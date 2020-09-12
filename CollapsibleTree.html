@@ -89,9 +89,9 @@
 									d3.json("https://raw.githubusercontent.com/giuliavilone/literature_review/master/paper.json", function(error, treeData){
 										if (error) throw error;
 										// Set the dimensions and margins of the diagram
-										var margin = {top: 20, right: 90, bottom: 30, left: 90},
-											width = 1600 - margin.left - margin.right,
-											height = 800 - margin.top - margin.bottom;
+										var margin = {top: 20, right: 60, bottom: 30, left: 60},
+											width = 2000 - margin.left - margin.right,
+											height = 1000 - margin.top - margin.bottom;
 										// append the svg object to the body of the page
 										// appends a 'group' element to 'svg'
 										// moves the 'group' element to the top left margin
@@ -128,7 +128,7 @@
 										  var nodes = treeData.descendants(),
 											  links = treeData.descendants().slice(1);
 										  // Normalize for fixed-depth.
-										  nodes.forEach(function(d){ d.y = d.depth * 280});
+										  nodes.forEach(function(d){ d.y = d.depth * 350});
 										  
 										  // ****************** Nodes section ***************************
 										  // Update the nodes...

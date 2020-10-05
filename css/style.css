@@ -39,7 +39,7 @@
 *::after {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; 
-  padding: 0 0 4px 5px;}
+  padding: 0 0 0px 0px;}
 
 html {
   font-family: sans-serif;
@@ -8656,6 +8656,22 @@ h1, h2, h3, h4, h5,
         font-weight: 600;
         color: #3e64ff;
         width: 50px; }
+
+.xai-source ul.xai {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  width: 100%; }
+  .xai-source ul.xai li {
+    list-style: none;
+    margin-bottom: 10px; }
+    .xai-source ul.xai li span {
+      width: calc(100% - 130px); }
+      .xai-source ul.xai li span:first-child {
+        font-weight: 600;
+        color: indianred;
+        width: 20px; }
+
 
 .ftco-about .counter-wrap .text p {
   font-size: 20px; }

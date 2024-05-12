@@ -761,7 +761,7 @@ var story = {
    "id": "0:1",
    "index": 0,
    "name": "Page 1",
-   "backColor": "#1E1E1E"
+   "backColor": "#C5CAE0"
   }
  ]
 }
